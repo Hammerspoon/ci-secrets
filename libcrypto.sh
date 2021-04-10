@@ -53,7 +53,7 @@ function passphrase_for_file_encrypt() {
     local FILENAME
     FILENAME="$1"
 
-    PASSBOOK_LINE="$(grep "$1" "${PASSBOOK}" || echo "NONE")"
+    PASSBOOK_LINE="$(grep "$FILENAME " "${PASSBOOK}" || echo "NONE")"
     if [ "${PASSBOOK_LINE}" == "NONE" ]; then
         dbg "passphrase_for_file(): Generating passphrase for $1"
         PASSPHRASE=$(pwgen -s 40 1)
