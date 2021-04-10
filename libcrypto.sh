@@ -73,7 +73,7 @@ function passphrase_for_file_decrypt() {
     local FILENAME
     FILENAME="$1"
 
-    PASSBOOK_LINE="$(grep "${FILENAME}" "${PASSBOOK}" || echo "NONE")"
+    PASSBOOK_LINE="$(grep "${FILENAME} " "${PASSBOOK}" || echo "NONE")"
     if [ "${PASSBOOK_LINE}" == "NONE" ]; then
         fail "passphrase_for_file(): No passphrase for ${FILENAME}"
     else
