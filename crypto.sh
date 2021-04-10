@@ -53,6 +53,7 @@ source "${SCRIPT_HOME}/libcrypto.sh"
 
 cd "${SCRIPT_HOME}"
 echo "cwd: $(pwd)"
+mkdir -p Cleartext
 
 function encrypt_all() {
     # Clear out the ciphertext folder
