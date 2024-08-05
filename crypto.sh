@@ -10,8 +10,13 @@ export DEBUG="0"
 export PASSBOOK="passbook.txt"
 
 # Binary locations
-export GPG_BINARY="/usr/local/bin/gpg"
-export READLINK="/usr/local/bin/greadlink"
+if [ -d "/opt/homebrew/bin" ]; then
+    export GPG_BINARY="/opt/homebrew/bin/gpg"
+    export READLINK="/opt/homebrew/bin/greadlink"
+else
+    export GPG_BINARY="/usr/local/bin/gpg"
+    export READLINK="/usr/local/bin/greadlink"
+fi
 
 # GPG options
 export GPG_OPTS="--quiet --batch --yes --no-symkey-cache"
